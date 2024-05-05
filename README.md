@@ -21,7 +21,7 @@ The architecture is composed of several microservices, each dedicated to a part 
 
 ### Database Service
 - **Functionality**: Manages database interactions.
-- **Flow**: Provides interfaces for CRUD operations on the Loan, Transactions, and Central Bank databases.
+- **Flow**: Provides interfaces for CRUD operations on the Loan data.
 
 ### Media Service
 - **Functionality**: Manages document storage in an S3 bucket.
@@ -37,11 +37,15 @@ The architecture is composed of several microservices, each dedicated to a part 
 
 ### Risk Management Service
 - **Functionality**: Evaluates financial risks associated with the loan.
-- **Flow**: Accesses data from the Central Bank database via the External Access Service to check for existing financial commitments, computes final scoring, and determines loan approval.
+- **Flow**: Accesses data from the Central Bank database via the External Access Service to check for existing financial commitments, computes final scoring, and send it to the Credit Service.
+
+### External Access Service
+- **Functionality**: Provides secure access to the Central Bank database for the Risk Management Service.
+- **Flow**: Facilitates data retrieval from the Central Bank database, essential for comprehensive risk assessment.
 
 ### Credit Service
 - **Functionality**: Finalizes the loan process.
-- **Flow**: Generates credit agreements and amortization schedules, stores them in the Loan Database, and notifies the client via the Notification Service.
+- **Flow**: Generates credit agreements and client related documents, stores them in the Loan Database..
 
 ### Notification Service
 - **Functionality**: Sends notifications about the loan application status.
