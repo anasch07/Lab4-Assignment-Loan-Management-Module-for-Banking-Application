@@ -1,8 +1,11 @@
 const express = require('express');
 const {info} = require("js-logger");
 
+const ports = require('../ports');
+
+
 const app = express();
-const PORT =  4005;
+const PORT = ports.MediaService;
 
 // Middleware
 app.use(express.json());

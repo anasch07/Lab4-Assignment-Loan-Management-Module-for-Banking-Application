@@ -2,8 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const WebSocket = require('ws');
 
+const ports = require('../ports');
+
+
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = ports.NotificationService;
 
 // Middleware
 app.use(express.json());

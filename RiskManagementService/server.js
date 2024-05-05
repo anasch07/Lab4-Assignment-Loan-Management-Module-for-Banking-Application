@@ -2,8 +2,11 @@ const express = require('express');
 const {info} = require("js-logger");
 const {post,get} = require("axios");
 
+const ports = require('../ports');
+
+
 const app = express();
-const PORT =  4009;
+const PORT = ports.RiskManagementService;
 
 
 // Middleware
@@ -24,7 +27,7 @@ app.get('/', (req, res) => {
 // Routes
 app.get('/riskManagement', async (req, res) => {
 
-        const ocrResponse = await post('http://localhost:4008/ocr', {
+        const ocrResponse = await post(`http://localhost:${ports.OcrService}/ocr`, {
             title: 'media title',
             description: 'media description',
             url: 'media url'
@@ -32,13 +35,13 @@ app.get('/riskManagement', async (req, res) => {
         console.log(ocrResponse.data)
 
 
-        const databaseFetchResponse = await get('http://localhost:4004/database', {
+        const databaseFetchResponse = await get(`http://localhost:${ports.DatabaseService}/database`, {
             database: 'data',
         })
         console.log(databaseFetchResponse.data)
 
 
-        const externalAccessServiceFetchResponse = await get('http://localhost:4007/externalAccessService', {
+        const externalAccessServiceFetchResponse = await get(`http://localhost:${ports.ExternalService}/externalAccessService`, {
             database: 'data',
         })
         console.log(externalAccessServiceFetchResponse.data)
@@ -48,12 +51,14 @@ app.get('/riskManagement', async (req, res) => {
 
 
 
-        const databaseResponse = await get('http://localhost:4004/database', {
+        const databaseResponse = await get(`http://localhost:${ports.DatabaseService}/database`, {
             database: 'data',
         })
         console.log(databaseResponse.data)
 
         console.log('sending data for credit Service');
+
+        res.send({message: 'Risk Management done'});
 
 }
 );
