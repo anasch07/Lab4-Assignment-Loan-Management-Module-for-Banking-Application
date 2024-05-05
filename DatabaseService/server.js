@@ -27,6 +27,11 @@ app.post('/database', (req, res) => {
 
 });
 
+app.get('/database', (req, res) => {
+    console.log('fetching data from database');
+    res.send({message: 'data fetched'});
+
+});
 
 
 app.listen(PORT, () => {

@@ -39,6 +39,8 @@ app.post('/startLoan', async (req, res) => {
     })
     console.log(databaseResponse.data)
 
+    
+
 
 
 
