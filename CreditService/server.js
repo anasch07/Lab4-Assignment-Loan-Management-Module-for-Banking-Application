@@ -39,6 +39,11 @@ app.get('/creditService', async (req, res) => {
             database: 'data',
         })
         console.log(databaseResponse.data)
+     
+        // send notification message to the notification service
+        await post('http://localhost:4000/notify', {
+        message: 'Job completed ! From Credit service!'
+    });
 
         res.send({message: 'credit service done'});
 

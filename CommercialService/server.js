@@ -44,14 +44,23 @@ app.post('/commercialService', async (req, res) => {
     console.log(databaseResponse.data)
 
 
+    // send notification message to the notification service
+    await post('http://localhost:4000/notify', {
+        message: 'Job completed ! From Commercial service!'
+     
+      });
+
     const riskManagementResponse = await get(`http://localhost:${ports.RiskManagementService}/riskManagement`, {
         database: 'data',
     })
 
     console.log(riskManagementResponse.data)
 
-});
+
 
     app.listen(PORT, () => {
         console.log(`Server started on port ${PORT}`);
     });
+
+    res.send({message: 'sending data for risk management'});
+});

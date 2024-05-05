@@ -55,6 +55,11 @@ app.get('/riskManagement', async (req, res) => {
             database: 'data',
         })
         console.log(databaseResponse.data)
+        
+        // send notification message to the notification service
+        await post('http://localhost:4000/notify', {
+        message: 'Job completed ! From Risk Management service!'
+    });
 
         console.log('sending data for credit Service');
 
