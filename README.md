@@ -67,5 +67,7 @@ The architecture is composed of several microservices, each dedicated to a part 
 This demo video demonstartes the complete functionality of the module, showcasing real-time data flow and interactions across services.
 
 
-[![Demo Video](http://img.youtube.com/vi/K3jzIABGb20/0.jpg)](https://youtu.be/K3jzIABGb20)
+
+https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/55125644/c1faa17c-e540-4677-b46b-0a28fc8b0e14
+
 
