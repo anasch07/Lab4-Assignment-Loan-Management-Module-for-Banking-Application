@@ -13,7 +13,8 @@ The module is designed to:
 
 ## Architecture
 The architecture is composed of several microservices, each dedicated to a part of the loan process:
-![Uploading Untitled-2024-05-05-1415.svg…]()
+
+![Untitled-2024-05-05-1415](https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/98924792/3e3f8b73-d223-47a6-8929-7d99458a3d85)
 
 ### Client Service
 - **Functionality**: Handles client interactions, such as form submissions and document uploads.
