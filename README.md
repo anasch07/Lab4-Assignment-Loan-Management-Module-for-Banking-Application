@@ -67,5 +67,5 @@ The architecture is composed of several microservices, each dedicated to a part 
 This demo video demonstartes the complete functionality of the module, showcasing real-time data flow and interactions across services.
 
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/K3jzIABGb20" frameborder="0" allowfullscreen></iframe>
+[![Demo Video](http://img.youtube.com/vi/K3jzIABGb20/0.jpg)](https://youtu.be/K3jzIABGb20)
 
