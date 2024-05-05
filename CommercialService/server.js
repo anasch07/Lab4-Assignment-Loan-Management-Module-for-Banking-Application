@@ -42,12 +42,10 @@ app.post('/commercialService', async (req, res) => {
     console.log(databaseResponse.data)
 
 
-    res.send({message: 'sending data for risk management'});
-
-
-
-});
-
-    app.listen(PORT, () => {
-        console.log(`Server started on port ${PORT}`);
+    // send notification message to the notification service
+    await post('http://localhost:4000/notify', {
+        message: 'Job completed ! From Commercial service!'
     });
+
+    res.send({message: 'sending data for risk management'});
+});
