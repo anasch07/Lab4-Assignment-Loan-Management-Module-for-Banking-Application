@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 
-// Function to get top 10 industries by count
+
 app.get('/', (req, res) => {
     console.log('Request received for database service');
     res.send({message: 'Request received'});
@@ -25,6 +25,10 @@ app.get('/', (req, res) => {
 
 // Routes
 app.post('/commercialService', async (req, res) => {
+
+    console.log('--------------------------------------------');
+
+
 
     console.log('getting info from transactional database');
 
@@ -46,17 +50,17 @@ app.post('/commercialService', async (req, res) => {
 
 
 
-
-
     await post(`http://localhost:${ports.NotificationService}/notify`, {
         message: 'Job completed ! From Commercial service! With Data {...}'
     });
-    console.log('Notification sent to Notification Service');
 
+    console.log('Sending to Risk Management Service')
     await get(`http://localhost:${ports.RiskManagementService}/riskManagement`, {
         database: 'data',
     })
     console.log('Risk Management Done');
+
+
 
 
     res.send({message: 'Commercial Service done'});

@@ -14,11 +14,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-// Function to get top 10 industries by count
 
 
-// Function to get top 10 industries by count
+
+
 app.get('/', (req, res) => {
+    console.log('--------------------------------------------');
+
     console.log('Request received for External Access Service');
     res.send({message: 'Request received'});
 });
@@ -26,6 +28,7 @@ app.get('/', (req, res) => {
 
 // Routes
 app.get('/externalAccessService', async (req, res) => {
+        console.log('--------------------------------------------');
 
  console.log('doing external access');
           res.send({message: 'External Access done'});

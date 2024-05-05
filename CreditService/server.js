@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-// Function to get top 10 industries by count
 
 
-// Function to get top 10 industries by count
+
+
 app.get('/', (req, res) => {
     console.log('Request received for Risk Management Service');
     res.send({message: 'Request received'});
@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
 
 // Routes
 app.get('/creditService', async (req, res) => {
+    console.log('--------------------------------------------');
 
     console.log('doing credit service');
         await post(`http://localhost:${ports.MediaService}/media`, {
@@ -41,7 +42,7 @@ app.get('/creditService', async (req, res) => {
         console.log("fetched from db");
      
         // send notification message to the notification service
-        await post('http://localhost:4000/notify', {
+        await post(`http://localhost:${ports.NotificationService}/notify`, {
         message: 'Job completed ! From Credit service!'
     });
 

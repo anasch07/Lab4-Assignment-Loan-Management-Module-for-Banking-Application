@@ -23,7 +23,7 @@ const CompanyCountSchema = new mongoose.Schema({
 
 const CompanyCountModel = mongoose.model('company_count', CompanyCountSchema);
 
-// Function to get top 10 industries by count
+
 async function getTop10() {
     try {
         return await CompanyCountModel.find().sort({ count: -1 }).limit(10);

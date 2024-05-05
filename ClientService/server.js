@@ -21,6 +21,8 @@ app.use(express.urlencoded({ extended: true }));
 // Routes
 app.post('/startLoan', async (req, res) => {
 
+    console.log('--------------------------------------------');
+
     // send to request to localhost 4005
    await post(`http://localhost:${ports.MediaService}/media`, {
         title: 'media title',
@@ -44,8 +46,6 @@ app.post('/startLoan', async (req, res) => {
         url: 'Commercial url'
     })
     console.log('Sending to Commercial Service');
-
-
 
 
     res.send({message: 'Loan started'});

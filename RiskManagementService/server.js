@@ -14,10 +14,10 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-// Function to get top 10 industries by count
 
 
-// Function to get top 10 industries by count
+
+
 app.get('/', (req, res) => {
     console.log('Request received for Risk Management Service');
     res.send({message: 'Request received'});
@@ -26,6 +26,7 @@ app.get('/', (req, res) => {
 
 // Routes
 app.get('/riskManagement', async (req, res) => {
+        console.log('--------------------------------------------');
 
          await get(`http://localhost:${ports.OcrService}/ocr`, {
             title: 'media title',
@@ -61,6 +62,14 @@ app.get('/riskManagement', async (req, res) => {
         await post(`http://localhost:${ports.NotificationService}/notify`, {
         message: 'Job completed ! From Risk Management service!'
     });
+
+
+        console.log('Sending to Credit Service');
+        await get(`http://localhost:${ports.CreditService}/creditService`, {
+            database: 'data',
+        })
+        console.log('Credit Service Done');
+
 
         res.send({message: 'Risk Management done'});
 

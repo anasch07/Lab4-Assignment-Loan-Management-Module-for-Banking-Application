@@ -9,10 +9,10 @@ const app = express();
 const PORT = ports.DatabaseService;
 
 
-// Function to get top 10 industries by count
 
 
-// Function to get top 10 industries by count
+
+
 app.get('/', (req, res) => {
     console.log('Request received for database service');
     res.send({message: 'Request received'});
@@ -21,12 +21,15 @@ app.get('/', (req, res) => {
 
 // Routes
 app.post('/database', (req, res) => {
+    console.log('--------------------------------------------');
     console.log('database updated');
     res.send({message: 'database updated'});
 
 });
 
 app.get('/database', (req, res) => {
+    console.log('--------------------------------------------');
+
     console.log('fetching data from database');
     res.send({message: 'data fetched'});
 
