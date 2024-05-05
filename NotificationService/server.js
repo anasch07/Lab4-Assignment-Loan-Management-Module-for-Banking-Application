@@ -1,6 +1,12 @@
 const express = require('express');
+
+
+const ports = require('../ports');
+
+
+
 const app = express();
-const PORT = process.env.PORT || 4000;
+const PORT = ports.NotificationService;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

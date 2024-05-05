@@ -2,8 +2,11 @@ const express = require('express');
 const {info} = require("js-logger");
 const {post,get} = require("axios");
 
+const ports = require('../ports');
+
+
 const app = express();
-const PORT =  4008;
+const PORT = ports.OcrService;
 
 
 // Middleware

@@ -2,8 +2,11 @@ const express = require('express');
 const {info} = require("js-logger");
 const {post,get} = require("axios");
 
+const ports = require('../ports');
+
+
 const app = express();
-const PORT =  4009;
+const PORT = ports.CreditService;
 
 
 // Middleware
@@ -25,14 +28,14 @@ app.get('/', (req, res) => {
 app.get('/creditService', async (req, res) => {
 
     console.log('doing credit service');
-        const mediaResponse = await post('http://localhost:4005/media', {
+        const mediaResponse = await post(`http://localhost:${ports.MediaService}/media`, {
             title: 'media title',
             description: 'media description',
             url: 'media url'
         })
         console.log(mediaResponse.data)
 
-        const databaseResponse = await post('http://localhost:4004/database', {
+        const databaseResponse = await post(`http://localhost:${ports.DatabaseService}/database`, {
             database: 'data',
         })
         console.log(databaseResponse.data)

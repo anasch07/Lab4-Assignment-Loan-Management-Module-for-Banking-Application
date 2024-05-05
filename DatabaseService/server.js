@@ -1,13 +1,12 @@
 const express = require('express');
 const {info} = require("js-logger");
 
+
+const ports = require('../ports');
+
+
 const app = express();
-const PORT =  4004;
-
-
-// Middleware
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+const PORT = ports.DatabaseService;
 
 
 // Function to get top 10 industries by count
