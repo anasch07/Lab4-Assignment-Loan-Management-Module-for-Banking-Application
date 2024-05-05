@@ -1,6 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
-const WebSocket = require('ws');
 const {post} = require("axios");
 
 const app = express();
@@ -16,10 +14,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 
-
-
-
-// Function to get top 10 industries by count
 
 
 // Routes
@@ -39,9 +33,8 @@ app.post('/startLoan', async (req, res) => {
     })
     console.log(databaseResponse.data)
 
-    
 
-
+    console.log('Sending to Commercial Service');
 
 
     res.send({message: 'Loan started'});
