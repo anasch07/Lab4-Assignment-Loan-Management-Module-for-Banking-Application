@@ -30,37 +30,40 @@ app.post('/commercialService', async (req, res) => {
 
 
 
-    const ocrResponse = await post(`http://localhost:${ports.OcrService}/ocr`, {
+     await get(`http://localhost:${ports.OcrService}/ocr`, {
         title: 'media title',
         description: 'media description',
         url: 'media url'
     })
-    console.log(ocrResponse.data)
+    console.log('OCR Done');
 
 
-    const databaseResponse = await get(`http://localhost:${ports.DatabaseService}/database`, {
+    await get(`http://localhost:${ports.DatabaseService}/database`, {
         database: 'data',
     })
-    console.log(databaseResponse.data)
-
-
-    // send notification message to the notification service
-    await post('http://localhost:4000/notify', {
-        message: 'Job completed ! From Commercial service!'
-     
-      });
-
-    const riskManagementResponse = await get(`http://localhost:${ports.RiskManagementService}/riskManagement`, {
-        database: 'data',
-    })
-
-    console.log(riskManagementResponse.data)
+    console.log('Fetched from Database Service');
 
 
 
-    app.listen(PORT, () => {
-        console.log(`Server started on port ${PORT}`);
+
+
+
+    await post(`http://localhost:${ports.NotificationService}/notify`, {
+        message: 'Job completed ! From Commercial service! With Data {...}'
     });
+    console.log('Notification sent to Notification Service');
 
-    res.send({message: 'sending data for risk management'});
+    await get(`http://localhost:${ports.RiskManagementService}/riskManagement`, {
+        database: 'data',
+    })
+    console.log('Risk Management Done');
+
+
+    res.send({message: 'Commercial Service done'});
+
+});
+
+
+app.listen(PORT, () => {
+    console.log(`Server started on port ${PORT}`);
 });

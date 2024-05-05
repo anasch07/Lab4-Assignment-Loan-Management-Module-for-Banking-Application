@@ -28,17 +28,17 @@ app.get('/', (req, res) => {
 app.get('/creditService', async (req, res) => {
 
     console.log('doing credit service');
-        const mediaResponse = await post(`http://localhost:${ports.MediaService}/media`, {
+        await post(`http://localhost:${ports.MediaService}/media`, {
             title: 'media title',
             description: 'media description',
             url: 'media url'
         })
-        console.log(mediaResponse.data)
+        console.log("Uploaded to media service");
 
-        const databaseResponse = await post(`http://localhost:${ports.DatabaseService}/database`, {
+      await post(`http://localhost:${ports.DatabaseService}/database`, {
             database: 'data',
         })
-        console.log(databaseResponse.data)
+        console.log("fetched from db");
      
         // send notification message to the notification service
         await post('http://localhost:4000/notify', {

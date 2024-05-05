@@ -27,43 +27,44 @@ app.get('/', (req, res) => {
 // Routes
 app.get('/riskManagement', async (req, res) => {
 
-        const ocrResponse = await post(`http://localhost:${ports.OcrService}/ocr`, {
+         await get(`http://localhost:${ports.OcrService}/ocr`, {
             title: 'media title',
             description: 'media description',
             url: 'media url'
         })
-        console.log(ocrResponse.data)
+        console.log("OCR Done");
 
 
-        const databaseFetchResponse = await get(`http://localhost:${ports.DatabaseService}/database`, {
+         await get(`http://localhost:${ports.DatabaseService}/database`, {
             database: 'data',
         })
-        console.log(databaseFetchResponse.data)
+        console.log("Fetched from Database Service");
 
 
-        const externalAccessServiceFetchResponse = await get(`http://localhost:${ports.ExternalService}/externalAccessService`, {
+        await get(`http://localhost:${ports.ExternalService}/externalAccessService`, {
             database: 'data',
         })
-        console.log(externalAccessServiceFetchResponse.data)
+        console.log("External Access Done");
 
 
         console.log('doing risk management');
 
 
 
-        const databaseResponse = await get(`http://localhost:${ports.DatabaseService}/database`, {
+        await post(`http://localhost:${ports.DatabaseService}/database`, {
             database: 'data',
         })
-        console.log(databaseResponse.data)
+        console.log('Wrote to Database Service');
+
         
         // send notification message to the notification service
-        await post('http://localhost:4000/notify', {
+        await post(`http://localhost:${ports.NotificationService}/notify`, {
         message: 'Job completed ! From Risk Management service!'
     });
 
-        console.log('sending data for credit Service');
-
         res.send({message: 'Risk Management done'});
+
+
 
 }
 );

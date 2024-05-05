@@ -22,27 +22,29 @@ app.use(express.urlencoded({ extended: true }));
 app.post('/startLoan', async (req, res) => {
 
     // send to request to localhost 4005
-    const mediaResponse = await post(`http://localhost:4005/${ports.MediaService}`, {
+   await post(`http://localhost:${ports.MediaService}/media`, {
         title: 'media title',
         description: 'media description',
         url: 'media url'
     })
-    console.log(mediaResponse.data)
+    console.log('Uploaded media to Media Service');
 
 
-    const databaseResponse = await post(`http://localhost:4004/${ports.DatabaseService}`, {
+
+    await post(`http://localhost:${ports.DatabaseService}/database`, {
         database: 'data',
     })
-    console.log(databaseResponse.data)
+    console.log('Uploaded data to Database Service');
 
 
-    console.log('Sending to Commercial Service');
-    const commercialResponse = await post(`http://localhost:4004/${ports.CommercialService}`, {
+
+     await post(`http://localhost:${ports.CommercialService}/commercialService`, {
         title: 'Commercial title',
         description: 'Commercial description',
         url: 'Commercial url'
     })
-    console.log(commercialResponse.data)
+    console.log('Sending to Commercial Service');
+
 
 
 
