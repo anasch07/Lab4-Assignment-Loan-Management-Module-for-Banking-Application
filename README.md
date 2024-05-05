@@ -1,4 +1,4 @@
-![Untitled-2024-05-05-1415](https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/98924792/d1082f83-da01-4b25-ae4c-8af4fe2ee206)# Loan Management Module for Banking Application
+# Loan Management Module for Banking Application
 
 ## Overview
 This project implements a microservice architecture for a loan management module within an existing banking application. The goal is to automate various steps of the loan process, from application submission to final credit decision, using a set of interconnected services.
