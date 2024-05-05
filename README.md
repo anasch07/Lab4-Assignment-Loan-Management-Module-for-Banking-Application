@@ -12,9 +12,8 @@ The module is designed to:
 5. Generate and manage credit agreements and amortization tables.
 
 ## Architecture
-![image](https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/98924792/59c6ce32-8930-4429-a9fd-6cd43e395d12)
-
 The architecture is composed of several microservices, each dedicated to a part of the loan process:
+![image](https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/98924792/59c6ce32-8930-4429-a9fd-6cd43e395d12)
 
 ### Client Service
 - **Functionality**: Handles client interactions, such as form submissions and document uploads.
