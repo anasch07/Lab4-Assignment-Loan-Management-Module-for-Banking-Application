@@ -3,6 +3,8 @@
 ## 🌐 Overview
 This project implements a microservice architecture for a loan management module within an existing banking application. The goal is to automate various steps of the loan process, from application submission to final credit decision, using a set of interconnected services.
 
+[Lab Link](https://insatunisia.github.io/TP-ArchLog/tp4/)
+
 ## 📋 Requirements
 The module is designed to:
 1. Accept and process client applications and uploaded documents. 📄🖋️
