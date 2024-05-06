@@ -1,4 +1,6 @@
-# 💼 Loan Management Module for Banking Application
+# 💼 Lab4 Assignment: Loan Management Module for Banking Application
+
+## 👥 Created By: Mariem Ksontini & Anas Chaibi
 
 ## 🌐 Overview
 This project implements a microservice architecture for a loan management module within an existing banking application. The goal is to automate various steps of the loan process, from application submission to final credit decision, using a set of interconnected services.
