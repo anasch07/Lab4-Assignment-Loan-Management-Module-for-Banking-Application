@@ -17,7 +17,7 @@ The module is designed to:
 
 ## 🏗️ Architecture
 The architecture is composed of several microservices, each dedicated to a part of the loan process:
-![Architecture Diagram](https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/98924792/fb7b65d0-fe55-4a93-9996-4ef6df6b3722)
+![111](https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/98924792/d4d8ad78-26a0-4764-a13e-dddb3905ebf1)
 
 ### 🤝 Client Service
 - **Functionality**: Handles client interactions, such as form submissions and document uploads. 🤝📥
