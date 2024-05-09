@@ -17,7 +17,7 @@ The module is designed to:
 
 ## 🏗️ Architecture
 The architecture is composed of several microservices, each dedicated to a part of the loan process:
-![111](https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/98924792/d4d8ad78-26a0-4764-a13e-dddb3905ebf1)
+![Untitled-2024-05-09-2220](https://github.com/anasch07/Lab4-Assignment-Loan-Management-Module-for-Banking-Application/assets/98924792/49f1bcf1-3040-4cf9-9e6e-b36cb230d76c)
 
 ### 🤝 Client Service
 - **Functionality**: Handles client interactions, such as form submissions and document uploads. 🤝📥
@@ -66,6 +66,21 @@ The architecture is composed of several microservices, each dedicated to a part 
 ![Sequence Diagram](https://github.com/anasch07/Software-Architecture-Loan-Management-Microservices/assets/98924792/00c624d5-9c49-481b-adee-8577d4cc478c)
 - **Link**: [Sequence Diagram](https://mermaid.live/view#pako:eNq1Vstu2zAQ_BVCZ_fUmw4B_EiBAkkL2M3Nlw21dghLpEpSSdMg_15SlCyRougAqX2w5d2ZfZDDFd8yKgrM8kzh7wY5xQ2Do4Rqz4n51CA1o6wGrsm6ZGh-QJF95p732Rxqh_KZURyDSWeLke6xYOBxWkuKsvu6augJu3qWFfwV3BiJs8YYG9DwCAq9PL0xlepOAN-sHN4-nyNF-xdVhZIyKP01OJtTmX5J4AqoZuKccGRK5v253noJzf9Upi1Tp3vgcMQq3C7rIoMvFeX2j0bJoVxSikp5UXoXcb5UlLXJIqFcAT_1XXcmYm3p5ZZGKIHcWlMq4Q-h2YFRsIvqUceOMID7dlr-cnPj6TwnD3UpoCAHVqI)
 
+## 🌍 Contribution to Sustainable Development Goals (SDGs)
+
+Our loan management module aligns with key United Nations Sustainable Development Goals (SDGs) to promote economic growth and sustainable practices:
+
+### SDG 8: Decent Work and Economic Growth
+- **Inclusive Finance**: Automates loan processing to enable broader access to financial services, fostering entrepreneurship and economic development.
+
+### SDG 9: Industry, Innovation, and Infrastructure
+- **Technological Innovation**: Our microservices architecture promotes continuous improvement and resilient infrastructure, enhancing banking technologies.
+
+### SDG 12: Responsible Consumption and Production
+- **Resource Efficiency**: Digitizes the loan process and uses OCR technology for paperless document handling, significantly reducing material waste.
+
+### Environmental Impact
+- **Reduced Carbon Footprint**: Minimizes physical banking activities and optimizes cloud-based resource allocation, contributing to lower energy consumption and reduced emissions.
 
 ## 🎥 Demo
 This demo video demonstartes the complete functionality of the module, showcasing real-time data flow and interactions across services.
